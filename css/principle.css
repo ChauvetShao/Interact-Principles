@@ -1,0 +1,180 @@
+@media only screen and (min-width: 769px) {
+    .page-principle {
+        display:flex
+    }
+
+    .page-principle .content,.page-principle .navigation-screen {
+        flex: 50% 1
+    }
+
+    .page-principle .navigation-screen {
+        margin-right: -1px
+    }
+}
+
+.page-principle .navigation-screen {
+    --navi-inner-spacing: var(--spacing-4);
+    z-index: 10;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0
+}
+
+@media only screen and (max-width: 768px) {
+    .page-principle .navigation-screen {
+        background:var(--color-white);
+        border-bottom: var(--border-black)
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .page-principle .navigation-screen {
+        height:100vh;
+        border-right: var(--border-black)
+    }
+}
+
+.page-principle .navigation-screen .page-principle-header {
+    z-index: 1;
+    position: relative;
+    padding: var(--navi-inner-spacing)
+}
+
+.page-principle .navigation-screen .page-principle-header .logo {
+    font-size: var(--text-xl);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex
+}
+
+.page-principle .navigation-screen .page-principle-header .logo svg {
+    height: 1.5em;
+    width: auto
+}
+
+/* 返回箭头 */
+.page-principle .navigation-screen .page-principle-header .back {
+    font-size: var(--text-xl);
+    display: flex
+}
+
+.page-principle .navigation-screen .page-principle-header .back svg {
+    height: 1.5em;
+    width: auto
+}
+
+.page-principle .navigation-screen .pagination {
+    display: flex;
+    align-items: center;
+    padding-bottom: var(--spacing-4);
+}
+
+@media only screen and (min-width: 769px) {
+    .page-principle .navigation-screen .pagination {
+        position:absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0
+    }
+}
+
+.page-principle .navigation-screen .pagination .current-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center
+}
+
+@media only screen and (min-width: 769px) {
+    .page-principle .navigation-screen .pagination .current-container {
+        position:absolute;
+        left: 50%;
+        transform: translateX(-50%)
+    }
+
+    .page-principle .navigation-screen .pagination .current-container .current {
+        font-size: 22vw
+    }
+}
+
+.page-principle .navigation-screen .pagination .current-container .current {
+    pointer-events: none;
+    transition: font-size 50ms;
+    transform: translateZ(0)
+}
+
+@media only screen and (min-width: 769px)and (hover:hover) {
+    .page-principle .navigation-screen .pagination .current-container .current {
+        transition:font-size .45s
+    }
+}
+
+.page-principle .navigation-screen .pagination .current-container .current.hover {
+    font-size: var(--text-display)
+}
+
+/* 页面内容 */
+.page-principle .content .content-body {
+    padding: var(--spacing-6);
+    padding-bottom: var(--spacing-12)
+}
+
+@media only screen and (min-width: 993px) {
+    .page-principle .content .content-body {
+        padding:var(--spacing-4) var(--spacing-6) var(--spacing-12)
+    }
+}
+
+.page-principle .content .content-body .summary {
+    line-height: var(--line-height-paragraph);
+    text-align: justify
+}
+
+.page-principle .content .content-body .hero .principle-title {
+    font-size: var(--text-display)
+}
+
+@media only screen and (max-width: 992px) {
+    .page-principle .content .content-body .hero .motion {
+        position:relative;
+        width: 100%;
+        padding-bottom: 100%
+    }
+
+    .page-principle .content .content-body .hero .motion img {
+        position: absolute;
+        top: 0
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .page-principle .content .content-body .hero {
+        position:relative;
+        height: calc(100vh - var(--spacing-4)*3)
+    }
+
+    .page-principle .content .content-body .hero .principle-title {
+        margin-bottom: var(--spacing-4)
+    }
+
+    .page-principle .content .content-body .hero .motion {
+        z-index: -1;
+        position: absolute;
+        top: calc(50% + var(--spacing-4));
+        transform: translateY(-50%);
+        left: 0;
+        right: 0
+    }
+
+    .page-principle .content .content-body .hero .motion img {
+        margin: 0 auto;
+        width: 35vw
+    }
+}
+
+.page-principle .content .content-body .download {
+    margin-top: var(--spacing-10)
+}
